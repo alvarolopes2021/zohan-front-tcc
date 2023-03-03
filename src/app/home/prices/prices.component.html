@@ -1,0 +1,23 @@
+<div class="prices-main">
+
+    <div class="side-side">
+        <div class="hold-icon">
+            <img src="./../../../assets/cost.png" alt="barber location">
+        </div>
+        <div class="info-box">
+            <h1>VALORES</h1>
+
+            <div class="hold-prices">
+                <table>
+                    <tr>
+                        <td *ngIf="services.length == 0">NÃO HÁ SERVIÇOS CADASTRADOS</td>
+                    </tr>
+                    <tr *ngFor="let service of services">
+                        <td>{{service.servicedescription}}</td>
+                        <td>{{service.servicevalue}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

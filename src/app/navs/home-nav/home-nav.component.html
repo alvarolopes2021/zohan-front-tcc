@@ -1,0 +1,27 @@
+<nav>
+    <ul class="display-cellphone-menu-ul">
+        <li (click)="showMenu()">
+            <fa-icon [icon]="icons.get('faHamburger')" class="input-icons"></fa-icon>
+        </li>
+    </ul>
+    <ul class="cellphone-menu display-none">
+        <a routerLink="/home" (click)="showMenu()">
+            <li routerLinkActive="active"> HOME </li>
+        </a>
+        <a routerLink="/ads" (click)="showMenu()">
+            <li routerLinkActive="active"> DIVULGAÇÕES </li>
+        </a>
+        <a routerLink="/prices" (click)="showMenu()">
+            <li routerLinkActive="active"> VALORES </li>
+        </a>
+        <a routerLink="/location" (click)="showMenu()">
+            <li routerLinkActive="active"> LOCAL </li>
+        </a>
+        <a routerLink="/signup" (click)="showMenu()">
+            <li class="menu-right" routerLinkActive="active"> CADASTRAR </li>
+        </a>
+        <a routerLink="/login" (click)="showMenu()">
+            <li class="menu-right" routerLinkActive="active"> ENTRAR </li>
+        </a>
+    </ul>
+</nav>

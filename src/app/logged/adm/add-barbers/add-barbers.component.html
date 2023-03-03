@@ -1,0 +1,75 @@
+<div class="main-add-barbers">
+
+    <app-logged-header title="ADICIONAR BARBEIROS"></app-logged-header>
+
+    <div class="hold-add-barber">
+
+        <form action="" [formGroup]="form">
+            <fieldset>
+                <legend>NOME DO BARBEIRO</legend>
+                <input type="text" name="" id="barberName" placeholder="Nome" formControlName="barberName"
+                    class="add-barbers-inputs">
+            </fieldset>
+
+            <fieldset>
+                <legend>TELEFONE DO BARBEIRO</legend>
+                <input type="tel" name="" class="add-barbers-inputs" placeholder="Telefone"
+                    title="Telefone - (35) 9 9898-9898" mask="(00) 0 0000-0000" [dropSpecialCharacters]="false"
+                    formControlName="barberPhone">
+            </fieldset>
+
+            <fieldset>
+                <legend>SENHA INICIAL</legend>
+                <input type="password" name="" class="add-barbers-inputs" placeholder="Senha"
+                    formControlName="barberPsw">
+            </fieldset>
+
+            <fieldset>
+                <legend>CONFIRMAR SENHA INICIAL</legend>
+                <input type="password" name="" class="add-barbers-inputs" placeholder="Confirmar senha"
+                    formControlName="confirmBarberPsw">
+            </fieldset>
+
+            <div class="hold-final-action-button">
+                <button class="final-action-button" (click)="addBarber()">CADASTRAR</button>
+            </div>
+
+        </form>
+
+        <div class="list-barbers">
+            <fieldset>
+                <legend>BARBEIROS</legend>
+                <div *ngIf="barbers.length <= 0" class="empty">
+                    <span>NENHUM BARBEIRO ADICIONADO</span>
+                </div>
+
+                <div *ngIf="errors.size > 0">
+                    <span class="error">{{errors.get(CONSTANTS.Errors.ERROR)}}</span>
+                </div>
+
+                <div *ngFor="let barber of barbers">
+
+                    <div class="span" [id]="barber.username">
+                        <span>{{barber.username}}</span>
+                    </div>
+
+                    <button class="crud-button delete" (click)="deleteBarber(barber)">
+                        <fa-icon [icon]="icons.get('faDelete')"></fa-icon>
+                    </button>
+
+                    <span> | </span>
+
+                    <button class="crud-button edit" (click)="editBarbers(barber)">
+                        <fa-icon [icon]="icons.get('faPencil')"></fa-icon>
+                    </button>
+
+                    <div class="hold-barber-detail" [id]="barber.userid">
+                        <app-barber-detail [barber]="barber" #barber_datail_component></app-barber-detail>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+
+    </div>
+</div>

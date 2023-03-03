@@ -1,0 +1,6 @@
+<app-home-nav *ngIf="!isLoggedIn"></app-home-nav>
+<app-logged-nav *ngIf="isLoggedIn"></app-logged-nav>
+
+<div [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+</div>

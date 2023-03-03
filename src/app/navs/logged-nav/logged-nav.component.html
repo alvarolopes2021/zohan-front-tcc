@@ -1,0 +1,178 @@
+<nav id="nav">
+    <ul>
+        <li class="first-child">
+            {{userInfo?.get(CONSTANTS.Keys.USERNAME)}}
+        </li>
+
+        <li class="hamburger" (click)="openMenu()" >
+            <span>
+                <fa-icon [icon]="icons.get('faHamburger')" class="input-icons"></fa-icon>
+            </span>            
+        </li>
+
+        <a (click)="openMenu()" routerLink="/logged/client/home" 
+            *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.USER">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faHome')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">INÍCIO</span>
+            </li>
+        </a>
+
+        <a (click)="openMenu()" routerLink="/logged/admin" 
+            *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.ADMIN">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faHome')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">PRÓXIMOS PEDIDOS</span>
+            </li>
+        </a>
+        <a (click)="openMenu()" routerLink="/logged/barber" 
+            *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.BARBER">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faHome')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">PRÓXIMOS PEDIDOS</span>
+            </li>
+        </a>
+
+        <!-- added v4.5.0 -->
+        <a (click)="openMenu()" routerLink="/logged/barber/history"
+            *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.BARBER">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faBook')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">HISTÓRICO</span>
+            </li>
+        </a>
+        
+        <a (click)="openMenu()" routerLink="/logged/client"
+            *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.USER">
+
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faMoney')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">VALORES</span>
+            </li>
+        </a>
+        <a (click)="openMenu()" routerLink="/logged/list-clients" 
+        *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.ADMIN">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faPeople')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">CLIENTES</span>
+            </li>
+        </a>
+        <a (click)="openMenu()" routerLink="/logged/all-orders" *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.ADMIN">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faBook')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">TODOS PEDIDOS</span>
+            </li>
+        </a>
+        
+        <a (click)="openMenu()" routerLink="/logged/scheduling">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faPencil')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">AGENDAR</span>
+            </li>
+        </a>
+
+        <a (click)="openMenu()" routerLink="/logged/orders-history" *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.USER">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faBook')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">HISTÓRICO</span>
+            </li>
+        </a>
+
+        <a (click)="openMenu()" routerLink="/logged/edit-schedule" *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.ADMIN">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faClock')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">INSERIR HORÁRIOS</span> 
+            </li>
+        </a>
+
+        <a (click)="openMenu()" routerLink="/logged/assign-barber-time" *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.ADMIN">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faBarberClock')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">ATRIBUIR HORÁRIOS</span> 
+            </li>
+        </a>
+
+        <a (click)="openMenu()" routerLink="/logged/add-barbers" *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.ADMIN">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faBarber')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">BARBEIROS</span> 
+            </li>
+        </a>
+
+        <a (click)="openMenu()" routerLink="/logged/add-services" *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.ADMIN">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faScissors')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">SERVIÇOS</span>
+            </li>
+        </a>
+
+        <a (click)="openMenu()" routerLink="/logged/revenue"
+            *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.ADMIN">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faMoney')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">FATURAMENTO</span>
+            </li>
+        </a>
+
+        <a (click)="openMenu()" routerLink="/logged/add-ads" *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.ADMIN">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faSign')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">DIVULGAÇÕES</span>
+            </li>
+        </a>
+        <a (click)="openMenu()" routerLink="logged/location" *ngIf="userInfo?.get(CONSTANTS.Keys.ROLE) === CONSTANTS.Roles.USER">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faLocation')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">LOCALIZAÇÃO</span>
+            </li>
+        </a>
+        <a (click)="openMenu()" routerLink="/logged/profile">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faUser')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">PERFIL</span>
+            </li>
+        </a>
+        <a (click)="openMenu()" (click)="logout()">
+            <li class="media-query">
+                <span>
+                    <fa-icon [icon]="icons.get('faSignOut')" class="input-icons"></fa-icon>
+                </span>
+                <span class="">SAIR</span>
+            </li>
+        </a>
+    </ul>
+</nav>

@@ -1,0 +1,17 @@
+<div class="divulga-main">
+
+    <div class="side-side">
+        <div class="hold-icon">
+            <img src="./../../../assets/advertisingWhite.png" alt="barber ads">
+        </div>
+
+        <div class="info-box">
+            <h1>DIVULGAÇÕES</h1>
+            <div class="hold-ads">
+                <h2 *ngIf="ad == null">NENHUMA DIVULGAÇÃO</h2>
+                <h3 *ngIf="ad !== null" id="ad">{{ad}}</h3>
+            </div>
+        </div>
+
+    </div>
+</div>

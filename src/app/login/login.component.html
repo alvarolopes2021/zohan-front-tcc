@@ -1,0 +1,57 @@
+<div class="login-main">
+
+    <div class="hold-logo">
+        <img src="./../../assets/dark_theme_main.jpeg" alt="logo">
+    </div>
+
+    <div class="hold-form">
+
+        <button id="close" (click)="close()"> X </button>
+
+        <h1>LOGIN</h1>
+
+        <form [formGroup]="loginForm">
+
+            <div class="input-container">
+                <label for="phone">
+                    <fa-icon [icon]="icons.get('faPhone')" class="input-icons"></fa-icon>
+                </label>
+                <input type="tel" name="phone" id="phone" formControlName="userPhone" placeholder="Telefone"
+                    title="Telefone - (35) 9 9898-9898" mask="(00) 0 0000-0000" [dropSpecialCharacters]="false">
+
+            </div>
+
+            <div class="input-container">
+                <label for="psw">
+                    <fa-icon [icon]="icons.get('faLock')" class="input-icons"></fa-icon>
+                </label>
+                <input type="password" id="psw" name="psw" formControlName="userPsw" placeholder="Senha">
+            </div>
+
+            <div class="display-errors" *ngIf="errors.size > 0 && errors.has(CONSTANTS.Errors.ERROR)">
+                <p>{{errors.get(CONSTANTS.Errors.ERROR)}}</p>
+            </div>
+
+
+            <div>
+                <button class="submit" (click)="login()" *ngIf="!isLoggingIn">ENVIAR</button>
+            </div>
+
+            <div>
+                <mat-spinner class="spinner" [mode]="mode" *ngIf="isLoggingIn">
+                </mat-spinner>
+            </div>
+
+        </form>
+
+        <div class="alreadyUser">
+            <p>&#9986; Não possui cadastro? <a routerLink='/signup'>Cadastre-se</a>
+                e realize um agendamento. &#9986;
+            </p>
+        </div>
+
+        <br>
+
+    </div>
+
+</div>

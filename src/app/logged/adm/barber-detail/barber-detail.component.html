@@ -1,0 +1,24 @@
+<div class="main">
+    <form [formGroup]="form">
+        <div>
+            <label >USUÁRIO</label>
+            <input type="text"  placeholder="NOME DE USUÁRIO" formControlName="barberUsername">
+        </div>
+        <div>
+            <label for="phone">TELEFONE</label>
+            <input type="tel"  placeholder="TELEFONE" title="Telefone - (35) 9 9898-9898" mask="(00) 0 0000-0000" [dropSpecialCharacters]="false" formControlName="barberPhone">
+        </div>
+        <div>
+            <label >SENHA ANTIGA</label>
+            <input type="password" placeholder="SENHA ATUAL" formControlName="barberOldPsw">
+        </div>
+        <div>
+            <label >NOVA SENHA</label>
+            <input type="password" placeholder="NOVA SENHA" formControlName="barberPsw">
+        </div>
+        <div>
+            <label >CONFIRMAR NOVA SENHA</label>
+            <input type="password" placeholder="CONFIRMAR" formControlName="barberConfirmPsw">
+        </div>
+    </form>
+</div>

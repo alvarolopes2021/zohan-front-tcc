@@ -1,0 +1,19 @@
+<div class="add-ads-main">
+    <div class="hold-add-ads">
+
+        <app-logged-header title="ADICIONAR DIVULGAÇÕES"></app-logged-header>
+
+        <form [formGroup]="form">
+            <div class="text-area">
+                <textarea name="text-area" id="text-area" cols="60" rows="20" class="text-area"
+                    placeholder="ESCREVA NOVAS DIVULGAÇÕES" formControlName="ad">
+                </textarea>
+            </div>
+
+            <div class="hold-button">
+                <button type="button" class="final-action-button" (click)="createAd()">DIVULGAR</button>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+.hold-logo{
+    margin:1.2em auto auto auto;
+    width: 20%;
+}
+.hold-logo img{ 
+    width: 100%;
+}
+
+h1{
+    margin: 1.2em;    
+    text-align: center;
+    font-family: 'Rye', cursive;
+}
+
+@media only screen and (max-width: 600px) { 
+    .hold-logo{
+        width: 50%
+    }
+}

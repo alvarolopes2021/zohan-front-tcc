@@ -1,0 +1,66 @@
+<div class="edit-day-time-main">
+    <div class="hold-create-schedule">
+
+        <app-logged-header title="EDITAR HORÁRIOS"></app-logged-header>
+
+        <form [formGroup]="form">
+
+            <mat-calendar [(selected)]="selected" [minDate]="minDate" class="calendar" (click)="getDayTime()">
+            </mat-calendar>
+
+            <fieldset>
+                <legend>Adicionar intervalo</legend>
+                <div>
+                    <input type="text" placeholder="08:30" formControlName="daytimestart" mask="00:00"  class="interval-input" [dropSpecialCharacters]="false">
+                    &nbsp;
+                    <input type="text" placeholder="Saltos em minutos" formControlName="jumps" mask="00" class="interval-input" [dropSpecialCharacters]="false">
+                    &nbsp;
+                    <input type="text" placeholder="17:30" formControlName="daytimeend" mask="00:00" class="interval-input" [dropSpecialCharacters]="false">
+
+                    <button type="button" (click)="addInterval()" class="mid-action-button">ADICIONAR INTERVALO</button>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Horário a adicionar</legend>
+                <div>
+                    <input type="text" placeholder="13:00-13:45" class="daytime-input" formControlName="scheduleToInsert" mask="00:00-00:00"
+                        [dropSpecialCharacters]="false">
+                    <button type="button" (click)="addToList()" class="mid-action-button">ADICIONAR</button>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Lista de horários</legend>
+                
+                <div *ngIf="schedules.length <= 0 && selected == null" class="empty">
+                    <span>ESCOLHA UM DIA</span>
+                </div>
+
+                <div *ngIf="schedules.length <= 0 && selected != null" class="empty">
+                    <span>NENHUM HORÁRIO ADICIONADO</span>
+                </div>
+
+                <div *ngFor="let schedule of schedules">
+
+                    <div class="span" [id]="schedule.daytimepretty">
+                        <span>{{schedule.daytimepretty}}</span>
+                    </div>
+
+                    <button class="crud-button delete" (click)="deleteFromList(schedule)">
+                        <fa-icon [icon]="icons.get('faDelete')"></fa-icon>
+                    </button>
+
+                    <span> | </span>
+
+                    <button class="crud-button edit" (click)="editItemFromList(schedule)">
+                        <fa-icon [icon]="icons.get('faPencil')"></fa-icon>
+                    </button>
+
+                </div>
+            </fieldset>
+
+        </form>
+
+    </div>
+</div>

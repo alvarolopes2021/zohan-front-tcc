@@ -1,0 +1,47 @@
+<div class="add-service-main">
+    <div class="hold-add-ads">
+
+        <app-logged-header title="SERVIÇOS"></app-logged-header>
+
+        <form [formGroup]="form">
+
+            <table>
+                <tr>
+                    <th>DESCRI<wbr>ÇÃO</th>
+                    <th>VALOR</th>
+                    <th>2 HORÁ<wbr>RIOS?</th>
+                    <th>ALTE<wbr>RAR</th>
+                    <th>DELE<wbr>TAR</th>
+                </tr>
+                <tr *ngIf="services.length == 0">
+                    <td colspan="5">NENHUM SERVIÇO ADICIONADO</td>
+                </tr>
+                <tr *ngFor="let service of services">
+                    <td>
+                        <span [id]="service.serviceid" class="description">{{service.servicedescription}}</span>
+                    </td>
+                    <td>
+                        <span [id]="service.serviceid" class="value">{{service.servicevalue}}</span>
+                    </td>
+                    <td>
+                        <input type="checkbox" [value]="service.serviceid" [checked]="service.usesmoretime" (change)="willUseMoreTime($event, service)">
+                    </td>
+                    <td>
+                        <button class="crud-button edit" (click)="editItemInList(service)">
+                            <fa-icon [icon]="icons.get('faPencil')"></fa-icon>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="crud-button delete-service" (click)="deleteFromList(service)">
+                            <fa-icon [icon]="icons.get('faDelete')"></fa-icon>
+                        </button>
+                    </td>
+                </tr>
+
+            </table>
+
+            <button class="add-button" (click)="addToList()">+</button>
+
+        </form>
+    </div>
+</div>

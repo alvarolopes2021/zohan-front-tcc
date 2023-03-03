@@ -1,0 +1,70 @@
+<div class="orders-history-main">
+    <div class="hold-order-history">
+
+        <app-logged-header title="PRÓXIMOS PEDIDOS"></app-logged-header>
+
+        <span class="hold-list-tile" *ngIf="!isLoading">
+            
+            <div class="pia" *ngIf="orderBinding.length <= 0 && !isLoading">
+                <app-list-tile 
+                    title="SEM PRÓXIMOS AGENDAMENTOS"
+                    tag="!">
+                    
+                </app-list-tile>
+            </div>
+
+            <div *ngFor="let order of orderBinding" class='pia'>
+                <app-list-tile 
+                    leading='<img src="assets/barber.ico" alt="Photo" class="pic">'
+                    leadingInfo="{{order.order_username}}" 
+                    tag="{{order.order_servicedescription}}"
+                    title="{{order.order_barbername}}" 
+                    subinfo="
+                        <small>
+                            <strong>{{order.order_daytimepretty!.split('-')[0]}}</strong>
+                            {{order.order_daytimeday | date: 'dd/MM/yyyy'}}
+                        </small>"
+                    actionText="
+                        <span class='{{!order.canCancelOrder ? 'ok' : 'cancel'}}'>
+                            {{!order.canCancelOrder ? 'OK' : 'CAN<wbr>CE<wbr>LAR'}}
+                        </span>" 
+                    [data]="!order.canCancelOrder ? 'OK' : order"
+                    (action)="!order.canCancelOrder ? 'OK' : cancelOrder($event)">
+                </app-list-tile>
+
+            </div>
+        </span>
+
+        <div>
+            <mat-spinner class="spinner" [mode]="mode" *ngIf="isLoading">
+            </mat-spinner>
+        </div>
+
+        <!--
+            <table>
+                <tr>
+                    <td>SER<wbr>VI<wbr>ÇO</td>
+                    <td>DIA</td>
+                    <td>HO<wbr>RÁ<wbr>RIO</td>
+                    <td>CLI <wbr>ENTE</td>
+                    <td>VALOR</td>
+                    <td>AÇÃO</td>
+                </tr>
+                <tr *ngIf="orderBinding.length <= 0">
+                    <td colspan="6">NENHUM AGENDA<wbr>MENTO REALIZADO</td>
+                </tr>
+                <tr *ngFor="let orderData of orderBinding">
+                    <td>{{orderData.order_servicedescription}}</td>
+                    <td>{{orderData.daytimeday | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{orderData.daytimepretty}}</td>
+                    <td>{{orderData.username}}</td>
+                    <td>{{orderData.order_servicevalue}}</td>
+                    <td class="action" *ngIf="orderData.canCancelOrder" (click)="cancelOrder(orderData)">CAN<wbr>CE<wbr>LAR
+                    </td>
+                    <td class="ok" *ngIf="!orderData.canCancelOrder">OK</td>
+                </tr>
+            </table>
+        -->
+       
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="list-tile">
+	
+    <div class="profile">
+        <div>
+            <span [innerHTML]="leading"></span>
+        </div>		
+        
+        <div class="profile-info">
+            <h4>{{leadingInfo}}</h4>
+            <small>{{leadingSubInfo}}</small>
+        </div>
+    </div>
+    
+    <div class='main-info'>
+            
+        <div class='main-info-title'>
+            <h5>{{title}}</h5>
+        </div>
+        <div class='tag blue'>
+            <span>{{tag}}</span>
+        </div>
+        <div [innerHTML]="subinfo">
+            
+        </div>			
+        
+    </div>	
+    
+    <div [innerHTML]="actionText" (click)="callAction()" class="action">
+        
+    </div>	
+    
+</div>

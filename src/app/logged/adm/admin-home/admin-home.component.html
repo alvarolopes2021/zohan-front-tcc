@@ -1,0 +1,72 @@
+<div class="logged-home-main">
+    <div class="hold-next-clients">
+
+        <app-logged-header title="PRÓXIMOS CLIENTES"></app-logged-header>
+
+        <span class="hold-list-tile" *ngIf="!isLoading">
+            
+            <div class="pia" *ngIf="nextOrders.length <= 0 && !isLoading">
+                <app-list-tile 
+                    title="SEM PRÓXIMOS AGENDAMENTOS"
+                    tag="!">
+                    
+                </app-list-tile>
+            </div>
+
+            <div *ngFor="let order of nextOrders" class='pia'>
+                <app-list-tile 
+                    leading='<img src="assets/barber.ico" alt="Photo" class="pic">'
+                    leadingInfo="{{order.order_username}}" 
+                    tag="{{order.order_servicedescription}}" 
+                    title="{{order.order_barbername}}"
+                    subinfo="
+                        <small>
+                            <strong>{{order.order_daytimepretty!.split('-')[0]}}</strong>
+                            {{order.order_daytimeday | date: 'dd/MM/yyyy'}}
+                        </small>"
+                    actionText="
+                        <span class='{{!order.canCancelOrder ? 'ok' : 'cancel'}}'>
+                            {{!order.canCancelOrder ? 'OK' : 'CAN<wbr>CE<wbr>LAR'}}
+                        </span>"
+                    [data]="!order.canCancelOrder ? 'OK' : order"
+                    (action)="!order.canCancelOrder ? 'OK' : cancelOrder($event)">
+                </app-list-tile>
+    
+            </div>
+        </span>
+
+        <div>
+            <mat-spinner class="spinner" [mode]="mode" *ngIf="isLoading">
+            </mat-spinner>
+        </div>
+
+
+        <!--
+        <table>
+            <tr>
+                <th>CLIENTE</th>
+                <th>SERVIÇO</th>
+                <th>HORÁRIO</th>
+                <th>DIA</th>
+                <th>BAR<wbr>BEIRO</th>
+                <th>AÇÕES</th>
+            </tr>
+            <tr *ngIf="nextOrders.length <= 0">
+                <td colspan="6">SEM PRÓXIMOS<wbr> AGENDA<wbr>MENTOS</td>
+            </tr>
+            <tr *ngFor="let order of nextOrders">
+                <td>{{order.username}}</td>
+                <td>{{order.order_servicedescription}}</td>
+                <td>{{order.daytimepretty!.split('-')[0]}}</td>
+                <td>{{order.daytimeday | date: 'dd/MM/yyyy'}}</td>
+                <td>{{order.barbername}}</td>
+                <td class="action" *ngIf="order.canCancelOrder" (click)="cancelOrder(order)">
+                    CAN<wbr>CE<wbr>LAR
+                </td>
+                <td class="ok" *ngIf="!order.canCancelOrder">OK</td>
+            </tr>
+        </table>
+        -->
+
+    </div>
+</div>

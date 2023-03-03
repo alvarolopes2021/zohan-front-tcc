@@ -1,0 +1,39 @@
+<div class="list-clients-main">
+    <div class="hold-clients">
+
+        <app-logged-header title="CLIENTES"></app-logged-header>
+
+        <div class="text">
+            <label for="text">
+                <fa-icon [icon]="icons.get('faSearch')" class="input-icons"></fa-icon>
+            </label>
+            <input type="text" name="" id="text" placeholder="Nome ou apelido" (keyup)="search()">
+        </div>
+
+        <div class="text">
+            <h2 *ngIf="users.length <= 0">0</h2>
+            <h2 *ngIf="users.length > 0">{{users.length}}</h2>
+        </div>
+
+        <table>
+            <tr>
+                <th>NOME</th>
+                <th>TELEFONE</th>
+                <th>DELE<wbr>TAR</th>
+            </tr>
+            <tr *ngIf="users.length == 0 && !isLoading">
+                <td colspan="3">NENHUM CLIENTE CADASTRADO</td>
+            </tr>
+            <tr *ngFor="let user of users">
+                <td>{{user.username}}</td>
+                <td>{{user.userphone}}</td>
+                <td (click)="deleteAccount(user.userid!)" class="delete-account">DELE<wbr>TAR</td>
+            </tr>
+        </table>
+
+        <div>
+            <mat-spinner class="spinner" [mode]="mode" *ngIf="isLoading">
+            </mat-spinner>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,150 @@
+.signup-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+h1 {
+    color: #101010;
+    margin: 0.5em;
+    font-family: 'Rye', cursive;
+}
+
+.hold-logo {
+    width: 15%;
+    margin: auto;
+}
+
+.hold-logo img {
+    width: 100%;
+}
+
+.hold-form {
+    color: #eee;
+    background-color: #bcbcbc;
+    width: 45%;
+    height: 55%;
+    text-align: center;
+    margin: auto;
+    border-radius: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.input-icons {
+    color: #000;
+    background-color: #fff;
+    display: inline-block;
+    padding: 0%;
+    margin-top: 1%;
+    margin-left: 1%;
+    border-radius: 0.5em;
+    position: absolute;
+    z-index: 3;
+}
+
+.input-icons:hover {
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
+    width: 85%;
+    padding: 2.5%;
+    margin-right: 1em;
+    margin-bottom: 1.2em;
+    border: none;
+    border-radius: 0.5em;
+    text-indent: 2em;
+
+}
+
+.display-errors {
+    color: #ee0000;
+    text-align: center;
+    margin: auto;
+    font-weight: bolder;
+}
+
+.submit {
+    margin-top: 3%;
+    margin-left: 0;
+    margin-bottom: 5%;
+    width: 50%;
+    padding: 0.9em;
+    background-color: #898998;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.submit:hover {
+    background-color: #9a9a9a;
+}
+
+.spinner {
+    margin: auto auto 2% auto;
+}
+
+.alreadyUser {
+    color: #000;
+    font-weight: bolder;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .hold-logo {
+        width: 60%;
+    }
+
+    .hold-form {
+        width: 75%;
+        height: 95%;
+    }
+
+    .input-icons {
+        color: #000;
+        background-color: #fff;
+        display: inline-block;
+        padding: 0%;
+        margin-top: 3%;
+        margin-left: 4%;
+        border-radius: 0.5em;
+        position: absolute;
+    }
+
+    .input-icons:hover {
+        cursor: pointer;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="password"] {
+        width: 100%;
+        padding: 5%;
+        margin-bottom: 1.2em;
+        margin-left: 3%;
+
+    }
+
+    .submit {
+        padding: 1em;
+    }
+
+    .alreadyUser {
+        color: #000;
+        font-weight: bolder;
+        margin-bottom: 5%;
+    }
+}

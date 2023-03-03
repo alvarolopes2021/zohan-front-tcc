@@ -1,0 +1,86 @@
+.logged-home-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    width: 80%;
+    min-height: 100%;
+    color: #eee;
+    overflow: hidden;
+}
+.hold-next-clients{
+    width: 100%;
+}
+.pia:nth-child(odd){
+    background-color: #fff;
+    color: #000;
+}
+/*
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+tr:nth-child(even){
+    background-color: #eee;
+    color: #000;
+}
+td, th{
+    padding: 1em;
+    text-align: center;
+    word-break: break-word;
+}
+*/  
+
+.spinner {
+    margin: auto auto 2% auto;
+}
+
+.cancel{
+    font-weight: bolder;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #ff0000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cancel:hover{
+    cursor: pointer;
+}
+
+.ok{
+    cursor: default;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: #43b949;
+}
+
+
+
+@media only screen and (min-width: 400px) and (max-width: 600px) { 
+    .logged-home-main{
+        width: 90%;
+    }
+    td, th{
+        padding: 0.2em;
+        text-align: center;
+        font-size: 0.9rem;
+    } 
+}
+
+
+@media only screen and (max-width: 400px) { 
+    .logged-home-main{
+        width: 90%;
+    }
+    td, th{
+        padding: 0.1em;
+        text-align: center;
+        font-size: 0.9rem;
+    } 
+}

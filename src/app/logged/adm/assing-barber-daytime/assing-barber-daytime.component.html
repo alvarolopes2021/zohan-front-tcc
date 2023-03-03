@@ -1,0 +1,52 @@
+<div class="assign-daytime-main">
+    <div class="hold-assign-daytime">
+
+        <app-logged-header title="ATRIBUIR HORÁRIOS"></app-logged-header>
+
+        <form [formGroup]="form">
+            
+            <mat-calendar [(selected)]="selected" [minDate]="minDate" class="calendar" (click)="getDayTime()">
+            </mat-calendar>
+
+            <fieldset>
+                <legend>Escolha um barbeiro</legend>
+                <div>
+                    <select name="" id="" formControlName="barber" (change)="change()" class="assign-inputs">
+                        <option value="" disabled selected>BARBEIROS</option>
+                        <option [value]="barber.userid" *ngFor="let barber of barbers">{{barber.username}}</option>
+                    </select>
+                    
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Lista de horários</legend>
+
+                <div *ngIf="schedules.length <= 0 && selected == null" class="empty">
+                    <span>ESCOLHA UM DIA</span>
+                </div>
+
+                <div *ngIf="schedules.length <= 0 && selected != null" class="empty">
+                    <span>NENHUM HORÁRIO ADICIONADO</span>
+                </div>
+
+                <div *ngFor="let schedule of schedules">                  
+
+                    <div class="span" >
+
+                        <input type="checkbox"  (change)="onCheckboxChange($event, schedule)" [checked]="schedule.checked"
+                        [disabled]="form.get('barber')?.invalid" [id]="schedule.daytimepretty"
+                        [value]="schedule.daytimepretty">
+
+                        <label [for]="schedule.daytimepretty">{{schedule.daytimepretty}}</label>
+                    </div>
+
+                </div>
+
+                <button type="button" (click)="assignAll()" class="mid-action-button" *ngIf="schedules.length > 0">ATRIBUIR TODOS</button>
+            </fieldset>
+
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,89 @@
+.revenue-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    right: 0;
+    width: 80%;
+    min-height: 100%;
+    color: #eee;
+    overflow: auto;
+}
+
+.hold-revenue {
+    width: 100%;    
+    margin: auto;
+}
+
+h1{
+    margin: 1.2em;    
+    text-align: center;
+}
+
+.calendar{
+    background-color: #fff;
+    color: #000;
+    width: 50%;
+    margin: auto;
+}
+fieldset {
+    width: 50%;
+    margin: 1.2em auto 1.2em auto;
+    text-align: center;
+}
+
+legend {
+    text-align: center;
+}
+select{
+    margin: 3%;
+    padding: 2%;
+    width: 60%;
+}
+option{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.spinner {
+    margin: auto auto 2% auto;
+}
+
+.hold-button {
+    margin: 2% auto 2% auto;
+    text-align: center;
+}
+.final-action-button {
+    position: relative;
+    width: 30%;
+    background-color: #eee;
+    color: #000;
+    margin: auto;
+    cursor: pointer;
+    border: none;
+    padding: 1%;
+}
+
+.final-action-button:hover {
+    background-color: #aaa;
+}
+
+@media only screen and (max-width: 600px) { 
+    .revenue-main{
+        width: 90%;
+    }
+    .calendar{
+        width: 80%;
+    }
+    fieldset{
+        width: 80%;   
+    }  
+    .span{
+        margin: 0;
+    }
+    .final-action-button{
+        width: 50%;
+        padding: 3%;
+    }
+}

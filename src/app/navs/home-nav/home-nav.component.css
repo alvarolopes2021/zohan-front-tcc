@@ -1,0 +1,55 @@
+li{
+    color: #bdbdbd;
+    list-style: none;
+    display: inline-block;
+    padding: 1.0em;
+    margin: 0;    
+}
+li:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.display-cellphone-menu-ul{
+    display: none;
+}
+a{
+    text-decoration: none;
+    color: #bdbdbd;
+}
+.menu-right{
+    float: right;
+}
+
+.active{
+    background-color: #fff;
+    color: #000;
+}
+
+@media only screen and (max-width: 600px) {         
+    li{
+        padding: 0.5em ;
+        display: block;
+        text-align: center;
+        background-color: rgb(29, 27, 27);
+    }   
+    ul{        
+        width: 100%;
+        z-index: 5;
+        background-color: rgb(29, 27, 27);
+    }
+    .display-cellphone-menu-ul{
+        cursor: pointer;
+        display: block;
+    }
+
+    .menu-right{
+        float: none;
+    }
+    .display-none{
+        display: none;
+    }
+    .absolute{
+        position: absolute;
+    }
+}

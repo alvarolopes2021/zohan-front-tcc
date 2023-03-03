@@ -1,0 +1,45 @@
+<div class="revenue-main">
+    <div class="hold-revenue">
+        <app-logged-header title="FATURAMENTO"></app-logged-header>
+
+        <mat-calendar [(selected)]="selected" class="calendar" [comparisonStart]="selected!.start"
+            [comparisonEnd]="selected!.end" (selectedChange)="selectedChange($event)">
+        </mat-calendar>
+
+        <form [formGroup]="form">
+
+            <fieldset>
+                <legend>BARBEIROS</legend>
+
+                <select name="barber" id="" formControlName="barber">
+                    <option value="" disabled selected>BARBEIROS</option>
+
+                    <option *ngIf="barbersList.length <= 0 && errors.size <= 0" disabled selected>
+                        NÃO HÁ BARBEIROS CADASTRADOS
+                    </option>
+
+                    <option *ngFor="let barber of barbersList" [value]="barber.userid">
+                        {{barber.username}}
+                    </option>
+                </select>
+
+                <h4>CASO NÃO SELECIONE ALGUM BARBEIRO, SERÁ CALCULADO O RENDIMENTO TOTAL SOMANDO TODOS OS BARBEIROS</h4>
+
+            </fieldset>
+
+            <div class="hold-revenue" *ngIf="revenueModel != null ">
+                <h2>R${{revenueModel.total}}</h2>
+            </div>
+
+            <div class="hold-button" *ngIf="isLoading">
+                <mat-spinner class="spinner" [mode]="mode" >
+                </mat-spinner>
+            </div>
+
+            <div class="hold-button" *ngIf="!isLoading">
+                <button class="final-action-button" (click)="consult()">CONSULTAR </button>
+            </div>
+        </form>
+
+    </div>
+</div>

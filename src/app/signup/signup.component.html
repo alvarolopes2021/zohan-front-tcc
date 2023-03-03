@@ -1,0 +1,74 @@
+<div class="signup-main">
+
+    <div class="hold-logo">
+        <img src="./../../assets/dark_theme_main.jpeg" alt="logo">
+    </div>
+
+    <div class="hold-form">
+
+        <h1>CADASTRO</h1>
+
+        <form [formGroup]="signupForm">
+
+            <div class="input-container">
+                <label for="username">
+                    <fa-icon [icon]="icons.get('faFileSignature')" class="input-icons"></fa-icon>
+                </label>
+                <input type="text" id="username" name="username" formControlName="userName"
+                    placeholder="Nome ou Apelido">
+            </div>
+
+            <div class="input-container">
+                <label for="phone">
+                    <fa-icon [icon]="icons.get('faPhone')" class="input-icons"></fa-icon>
+                </label>
+                <input type="tel" name="phone" id="phone" formControlName="userPhone" placeholder="Telefone"
+                    title="Telefone - (35) 9 9898-9898" mask="(00) 0 0000-0000" [dropSpecialCharacters]="false">
+            </div>
+
+            <div class="input-container">
+                <label for="psw">
+                    <fa-icon [icon]="icons.get('faLock')" class="input-icons"></fa-icon>
+                </label>
+                <input type="password" id="psw" name="psw" formControlName="userPsw" placeholder="Senha">
+            </div>
+
+
+            <div class="input-container">
+                <label for="confirmPsw">
+                    <fa-icon [icon]="icons.get('faCheck')" class="input-icons"></fa-icon>
+                </label>
+                <input type="password" id="confirmPsw" name="confirmPsw" formControlName="userConfirmPsw"
+                    placeholder="Confirmar senha">
+            </div>
+            
+            <div class="display-errors" *ngIf="errors.size > 0 && errors.has(CONSTANTS.Errors.PASSWORD_EMPTY)">
+                <p>{{errors.get(CONSTANTS.Errors.PASSWORD_EMPTY)}}</p>
+            </div>
+
+            <div class="display-errors" *ngIf="errors.size > 0 && errors.has(CONSTANTS.Errors.ERROR)">
+                <p>{{errors.get(CONSTANTS.Errors.ERROR)}}</p>
+                
+            </div>
+ 
+            <div>
+                <button class="submit" (click)="signup()" *ngIf="!isSigningUp">ENVIAR</button>
+            </div>
+            <div>
+                <mat-progress-spinner class="spinner" [mode]="mode" *ngIf="isSigningUp">
+                </mat-progress-spinner>
+            </div>
+
+        </form>
+
+        <div class="alreadyUser">
+            <p>&#9986; Já possui cadastro? Efetue o <a routerLink='/login'>login</a>
+                e realize um agendamento. &#9986;
+            </p>
+        </div>
+
+        <br>
+
+    </div>
+
+</div>

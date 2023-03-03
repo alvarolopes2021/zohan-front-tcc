@@ -1,0 +1,21 @@
+<div class="main">
+    <div class="hold-values">
+
+        <app-logged-header title="VALORES"></app-logged-header>
+
+        <table>
+            <tr>
+                <th>Serviço</th>
+                <th>Valor</th>
+            </tr>
+            <tr *ngIf="services.length <= 0">
+                <td colspan="2">NENHUM SERVIÇO DISPONÍVEL</td>
+            </tr>
+            <tr *ngFor="let service of services">
+                <td>{{service.servicedescription}}</td>
+                <td>{{service.servicevalue}}</td>
+            </tr>         
+        </table>
+        
+    </div>
+</div>

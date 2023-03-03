@@ -1,0 +1,69 @@
+.location-main{
+    border: px solid red;
+    width: 100%;
+}
+h1{
+    color: #eee;
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;    
+    text-align: center;
+    font-family: 'Rye', cursive;
+}
+.side-side{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.2em;
+}
+.hold-icon{
+    border: px solid red;
+    width: 20%;
+    position: relative;
+}
+.hold-icon img{
+    margin: 50% auto 40% 25%;
+    width: 80%;
+}
+.info-box{
+    position: relative;
+    margin-left: 10%;
+    width: 65%;    
+    border-radius: 1%;
+}
+.hold-location{
+    border: px solid red;
+    position: relative;
+    margin-left: 5%;
+}
+
+
+@media only screen and (max-width: 600px) { 
+    .side-side{        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;        
+    }
+    .hold-icon{        
+        width: 40%;
+        position: relative;
+    }
+    .hold-icon img{
+        margin: 20% auto 40% auto;
+        width: 80%;
+    }
+    .info-box{             
+        width: 90%;  
+        margin: 0;          
+        padding: 0;
+    }
+    .hold-loaction{   
+        padding: 0;     
+        margin: auto;   
+        width: 100%;
+    }
+    #map{
+        width: 100%;
+        margin: 0;
+    }
+}

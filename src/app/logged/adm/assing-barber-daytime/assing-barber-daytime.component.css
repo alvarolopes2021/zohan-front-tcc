@@ -1,0 +1,132 @@
+.assign-daytime-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    width: 80%;
+    min-height: 100%;
+    color: #eee;
+    overflow: auto;
+}
+.hold-assign-daytime{
+    width: 100%;
+    overflow: auto;
+}
+h1{
+    margin: 1.2em;    
+    text-align: center;
+}
+
+.calendar{
+    background-color: #fff;
+    color: #000;
+    width: 50%;
+    margin: auto;
+}
+fieldset{
+    width: 50%;
+    margin: 1.2em auto 1.2em auto;
+    text-align: center;
+}
+legend{
+    text-align: left;
+    margin-left: 1.2em;
+}
+
+select{
+    margin: 3%;
+    padding: 2%;
+    width: 60%;
+}
+option{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+input[type="checkbox"]{
+    display: inline-block;
+    margin: 2%;
+}
+.assign-inputs{
+    margin: 3%;
+    padding: 1%;
+    width: 60%;
+}
+
+.empty{
+    margin: 5%;
+}
+
+.mid-action-button{
+    background-color: #294681;
+    color: #eee;
+    border: none;
+    padding: 1%;
+    margin: 2%;
+    cursor: pointer;
+}
+.mid-action-button:hover{
+    background-color: #283f6b;   
+}
+.hold-button{
+    margin: 2% auto 2% auto;
+    text-align: center;
+}
+
+
+
+.hold-final-action-button {
+    margin: 2% auto 2% auto;
+    text-align: center;
+}
+
+.final-action-button {
+    position: relative;
+    width: 30%;
+    background-color: #eee;
+    color: #000;
+    margin: auto;
+    cursor: pointer;
+    border: none;
+    padding: 1%;
+}
+
+.final-action-button:hover {
+    background-color: #aaa;
+}
+
+
+@media only screen and (max-width: 600px) { 
+    .assign-daytime-main{
+        width: 90%;
+    }
+    .calendar{
+        width: 80%;
+    }
+    fieldset{
+        width: 80%;   
+    }    
+    input[type="text"], select{   
+        padding: 2%;     
+        width: 60%;
+    }
+    input[type="checkbox"]{
+        padding: 4%;
+    }
+    .span{
+        margin: 0;
+    }
+    .crud-button{        
+        padding: 3%;
+        margin: 1%;
+    }
+    .mid-action-button{
+        padding: 2%;
+        margin: 1%;
+    }
+    .final-action-button{
+        width: 50%;
+        padding: 3%;
+    }
+}

@@ -1,0 +1,83 @@
+<div class="main-profile">
+    <div class="hold-profile">
+
+        <app-logged-header title="PERFIL"></app-logged-header>
+
+        <div class="profile-box">
+
+            <form action="" [formGroup]="form">
+
+                <div class="side-by-side">
+
+                    <div class="left-side">
+
+                        <div class="top">
+                            <div class="hold-profile-image">
+                                <img src="../../../../assets/barber.ico" alt="Imagem do perfil">
+                            </div>
+                        </div>
+
+                        <div class="bottom">
+                            <label for="changePsw" class="label">ALTERAR SENHA</label>
+                            <input type="checkbox" (change)="willChangePassword = !willChangePassword" id="changePsw">
+                        </div>
+
+                    </div>
+
+                    <div class="right-side">
+                        <div class="side-image-information">
+
+                            <div class="input-container">
+                                <label for="userName" class="label">NOME OU APELIDO</label>
+                                <input type="text" name="" id="userName" formControlName="userName">
+                            </div>
+
+                            <div class="input-container">
+                                <label for="userPhone" class="label">TELEFONE</label>
+                                <input type="tel" name="" id="userPhone" mask="(00) 0 0000-0000"
+                                    [dropSpecialCharacters]="false" formControlName="userPhone">
+                            </div>
+
+                            <div class="input-container">
+                                <label for="userEmail" class="label">EMAIL</label>
+                                <input type="email" name="" id="userEmail" placeholder="Email" formControlName="userEmail">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="below-image-information">
+                    <div *ngIf="willChangePassword">
+                        <div class="input-container">
+                            <label for="oldPsw" class="label">SENHA ANTIGA</label>
+                            <input type="password" name="" id="oldPsw" value="" placeholder="Digite sua senha atual"
+                                formControlName="oldPsw">
+                        </div>
+
+                        <div class="input-container">
+                            <label for="newPsw" class="label">NOVA SENHA</label>
+                            <input type="password" name="" id="newPsw" value="" placeholder="Digite a nova senha"
+                                formControlName="newPsw">
+                        </div>
+
+                        <div class="input-container">
+                            <label for="confirmNewPsw" class="label">CONFIRMAR NOVA SENHA</label>
+                            <input type="password" name="" id="confirmNewPsw" value=""
+                                placeholder="Digite novamente a nova senha" formControlName="confirmNewPsw">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <button class="final-action-button" (click)="updateProfile()">ATUALIZAR</button>
+                    <button class="btn-delete" id="btn-delete" (click)="deleteAccount()">DELETAR CONTA</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

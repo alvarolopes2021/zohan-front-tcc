@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  PUSH_TOKEN_PUBLIC_KEY:"BMaGqxBSAz19UI2lBOzZDrfrmMoBOKXtGO7axc5SviWdoAUz3bq03_quJWQ1OkL-D9cluZCPK3C8uBbNIhsFmNI"
+  PUSH_TOKEN_PUBLIC_KEY:"BOq2Oirxo64fp3iLiREYhMO7YKm9OFlu3BVE8ChvxRSyNeSn99LvBVTSuie8_vQTfqkwIKmjGTIZaa_3vIPKzMI"
 };

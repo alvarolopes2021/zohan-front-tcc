@@ -4,8 +4,8 @@
   "theme_color": "#1d1b1b",
   "background_color": "#eee",
   "display": "standalone",
-  "scope": "http://localhost:8080",
-  "start_url": "http://localhost:8080",
+  "scope": "https://zohan-front-tcc.vercel.app",
+  "start_url": "https://zohan-front-tcc.vercel.app",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
